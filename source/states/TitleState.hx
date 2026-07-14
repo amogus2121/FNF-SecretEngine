@@ -293,6 +293,13 @@ class TitleState extends MusicBeatState
 				gfPosition.y += 60;
 				danceLeftFrames = [29, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 				danceRightFrames = [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28];
+			case 'STARE':
+				characterImage = 'GFStare';
+				animationName = 'GF Title Stare';
+				gfPosition.x += 165;
+				gfPosition.y += 60;
+				danceLeftFrames = [0];
+				danceRightFrames = [0];
 		}
 	}
 
