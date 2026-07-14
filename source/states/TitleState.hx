@@ -58,7 +58,7 @@ class TitleState extends MusicBeatState
 
 	#if TITLE_SCREEN_EASTER_EGG
 	final easterEggKeys:Array<String> = [
-		'SHADOW', 'RIVEREN', 'BBPANZU', 'PESSY'
+		'SHADOW', 'RIVEREN', 'BBPANZU', 'PESSY', 'OLDRIVEREN','STARE'
 	];
 	final allowedKeys:String = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	var easterEggKeysBuffer:String = '';
@@ -279,6 +279,13 @@ class TitleState extends MusicBeatState
 				gfPosition.x += 180;
 				gfPosition.y += 40;
 				useIdle = true;
+			case 'OLDRIVEREN':
+				characterImage = 'ZRiverOldBump';
+				animationName = 'River Title Bump Old';
+				danceLeftFrames = [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29];
+				danceRightFrames = [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+				gfPosition.x += 180;
+				gfPosition.y += 40;
 			case 'BBPANZU':
 				characterImage = 'BBBump';
 				animationName = 'BB Title Bump';
@@ -586,12 +593,16 @@ class TitleState extends MusicBeatState
 				{
 					case 'RIVEREN':
 						sound = FlxG.sound.play(Paths.sound('JingleRiver'));
+					case 'RIVERENOLD':
+						sound = FlxG.sound.play(Paths.sound('JingleRiver'));
 					case 'SHADOW':
 						FlxG.sound.play(Paths.sound('JingleShadow'));
 					case 'BBPANZU':
 						sound = FlxG.sound.play(Paths.sound('JingleBB'));
 					case 'PESSY':
 						sound = FlxG.sound.play(Paths.sound('JinglePessy'));
+					case 'STARE':
+						FlxG.sound.play(Paths.sound('JingleGFStare'));
 
 					default: //Go back to normal ugly ass boring GF
 						remove(ngSpr);
